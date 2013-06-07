@@ -18,9 +18,12 @@ end
 get '/sign_up' do
   p params
   user = User.create(params[:user])
+  
   if user.valid?
     session[:user_id] = user.id
     #view to render?  profile page maybe?
+  end
+  
   erb :'user_views/sign_up'
 end
 
