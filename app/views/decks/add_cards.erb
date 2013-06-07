@@ -1,0 +1,7 @@
+<h1>Now add Cards</h1>
+<form action="/deck/<%=@deck.id%>/add_cards" method="post">
+  <label for="topic">New Card</label>
+  <input type="text" name="deck[cards][question]" placeholder="Enter a card question"><br/>
+  <input type="text" name="deck[cards][answer]" placeholder="Now enter an answer"><br/>
+  <input type="submit" value="Submit all cards">
+</form>
