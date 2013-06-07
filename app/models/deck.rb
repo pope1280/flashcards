@@ -1,5 +1,5 @@
 class Deck < ActiveRecord::Base
   belongs_to :user
-  has_many :rounds
+  belongs_to :round
   has_many :cards
 end
