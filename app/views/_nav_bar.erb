@@ -1,0 +1,14 @@
+<div class='nav_bar'>
+  <a href='/' id="logo"><strong>FlashCards!</strong></a>
+
+  <ul>
+  <% if current_user %>                                                      
+    <li><a href='#'>New Game</a></li>
+    <li><a href='#'>Profile</a></li>
+    <li><a href='/logout'>Log Out</a></li>
+  <% else %>
+    <li><a href='/login'>Login</a></li>
+    <li><a href='/sign_up'>Sign Up</a></li>
+  <% end %>
+  </ul>
+</div>
