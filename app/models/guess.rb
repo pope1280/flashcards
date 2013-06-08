@@ -7,8 +7,10 @@ class Guess < ActiveRecord::Base
     @deck = Deck.find(@card.deck_id)
     if @card.answer == self.user_answer
       self.result = "correct"
+      self.save
     else
       self.result = "incorrect"
+      self.save
     end
     @deck.get_next_card(@deck, @card)
   end

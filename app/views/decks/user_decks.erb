@@ -2,7 +2,11 @@
 
 <ul>
   <% current_user.decks.each do |deck| %>
-    <li><a href='#'><%=deck.topic%></a></li>
+    <li><a href=''><%=deck.topic%></a></li>
+    <form action="/rounds" method="post">
+    <input type="hidden" name="round[deck_id]" value="<%= deck.id %>">
+    <input type="submit" value="Play">
+    </form>
   <% end %>
 </ul> 
 

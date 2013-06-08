@@ -1,3 +1,16 @@
 User.create(name: "Renata", email: "renata@me.com", password: "1234" )
 User.create(name: "B", email: "b@me.com", password: "abcd" )
 User.create(name: "Renzo", email: "renzo@me.com", password: "zebra" )
+
+Deck.create(:topic => "Justin Timberlake Songs", :user_id => 8 )
+
+Card.create(:question => "This song is about Britney Spears", :answer => "Cry me a river", :deck_id => 5)
+Card.create(:question => "This song is about Jessica Biel", :answer => "Cry me a river", :deck_id => 5)
+Card.create(:question => "This song is about NSYNC", :answer => "Cry me a river", :deck_id => 5)
+Card.create(:question => "This song is about curly hair", :answer => "Cry me a river", :deck_id => 5)
+Card.create(:question => "This song is about bringing sexy back", :answer => "Cry me a river", :deck_id => 5)
+Card.create(:question => "This song is about saturday night live", :answer => "Cry me a river", :deck_id => 5)
+Card.create(:question => "This song is about jay z", :answer => "Cry me a river", :deck_id => 5)
+Card.create(:question => "This song is about stuff", :answer => "Cry me a river", :deck_id => 5)
+Card.create(:question => "This song is about other stuff", :answer => "Cry me a river", :deck_id => 5)
+Card.create(:question => "This song is about more stuff ", :answer => "Cry me a river", :deck_id => 5)
