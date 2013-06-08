@@ -1,14 +1,13 @@
-<h1><%= @card.question %></h1>
+<% @cards.each do |card| %>
 
-<<<<<<< HEAD
-<form action="/round/<%= round.id %>/card/<%= card.id %>/guesses" method="post">
+<h1><%= card.question %></h1>
+<form action="/guesses" method="post">
 <input type="text" name="guess[user_answer]">
-<input type="hidden" name="guess[card_id]" value="<%= card.id %>">
-=======
-<form action="/round/<%= round.id %>/guesses" method="post">
-<input type="text" name="guess[user_answer]">
+
 <input type="hidden" name="guess[card_id]" value="<%= card.id %>">
 <input type="hidden" name="guess[deck_id]" value="<%= deck.id %>">
->>>>>>> 4bbe66205522d928e1b77608c66a25c5f3916935
+<input type="hidden" name="guess[round_id]" value="<%= round.id %>">
+
 <input type="submit" value="Guess!">
 </form>
+<% end %>

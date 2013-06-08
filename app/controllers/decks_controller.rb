@@ -39,16 +39,3 @@ post '/deck/:id/add_cards' do
   @deck.cards << Card.create(question: card["question"], answer: card["answer"], deck_id: @deck.id)
   redirect "/deck/#{@deck.id}"
 end
-#   @deck.cards = @cards
-#   @deck.save
-#   erb :'decks/show'
-# end
-
-# save for later
-
-# cards.each do |card|
-  #   debugger
-  #   p card
-  # cards.each {|card| @cards << Card.create(:question => card["question"], 
-  #                               :answer => card["answer"], 
-  #                               :deck_id => @deck.id)}
