@@ -3,7 +3,7 @@ require 'debugger'
 post '/rounds' do 
   @round = Round.new(params[:round])
   @round.deck_id = params[:round]["deck_id"]
-  @round.user_id = current_user.id WAIT TIL THIS IS BUILT
+  @round.user_id = current_user.id
   if @round.save
     @message = "Round successfully started"
     redirect "/round/#{@round.id}"
