@@ -12,7 +12,6 @@ post '/guesses' do
       @messages = @guess.result
       erb :'index'
     else
-      debugger
       @messages = @guess.result
       erb :'/cards/_display_question', :locals => {card: response[:card], deck: @deck, round: @round }
     end
