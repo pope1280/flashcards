@@ -43,8 +43,8 @@ post '/round/:round_id/card/:card_id/guesses' do
   if @guess.save
     if @guess.check_answer == true
       @message = ["Nice!", "Great!", "Terrific!"].sample
-      next_question(args)
-      erb :'cards/_display_question', :locals => {}
+      next_card = next_question(args)
+      erb :'cards/_display_question', :locals => {:round => @round, :deck => @deck, :card => next_card}
     else
       @message = "Sorry, not correct"
       next_question("string")
