@@ -71,8 +71,8 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   activesupport
-  debugger
   bcrypt-ruby
+  debugger
   faker
   pg
   rake
