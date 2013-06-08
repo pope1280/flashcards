@@ -3,7 +3,11 @@ def shuffle_cards(cards)
 end
 
 def next_question(args)
-  puts "NEXT!"
+  @deck = args[:deck]
+  @card = args[:card]
+  index = @deck.cards.index(@card)
+  next_card = @deck.cards[index + 1]
+  return next_card.id
 end
 
 def replay_question(args)

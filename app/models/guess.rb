@@ -12,6 +12,4 @@ class Guess < ActiveRecord::Base
       return false
     end
   end
-
-  def 
 end

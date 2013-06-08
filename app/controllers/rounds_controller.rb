@@ -33,17 +33,21 @@ get '/round/:round_id/card/:card_id' do
   erb :'cards/_display_question', :locals => {:round => @round, :deck => @deck, :card => @card}
 end
 
-post '/round/:id/guesses' do 
+post '/round/:round_id/card/:card_id/guesses' do
+  @round = Round.find(params[:round_id])
+  @deck = Deck.find(@round.deck_id)
+  @card = Card.find(params[:card_id])
   @guess = Guess.new(params[:guess])
-  @guess.round_id = params(round[:id])
+  @guess.round_id = params[:id]
+  args = {deck: @deck, card: @card }
   if @guess.save
     if @guess.check_answer == true
       @message = ["Nice!", "Great!", "Terrific!"].sample
-      debugger
-      next_question
+      next_question(args)
+      erb :'cards/_display_question', :locals => {}
     else
       @message = "Sorry, not correct"
-      next_question()
+      next_question("string")
     end
   else
     @message = @guess.errors.messages
