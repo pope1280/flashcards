@@ -2,6 +2,7 @@
 <form action="/deck/<%=@deck.id%>/add_cards" method="post">
   <label for="topic">New Card</label>
   <input type="text" name="deck[cards][question]" placeholder="Enter a card question"><br/>
-  <input type="text" name="deck[cards][answer]" placeholder="Now enter an answer"><br/>
-  <input type="submit" value="Submit all cards">
+  <input type="text" name="deck[cards][answer]" placeholder="Now enter an answer"><br><br>
+  <button type="submit" name="button" value="another_card">Add Another Card</button>
+  <button type="submit" name="button" value="submit">I'm Done!</button>
 </form>

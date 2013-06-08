@@ -1,12 +1,12 @@
 require 'debugger'
-get '/decks' do 
-  # need before filter here for logged in users
-  @decks = Deck.all
-  erb :'decks/index'
-end
+# get '/decks' do 
+#   # need before filter here for logged in users
+#   @decks = Deck.all
+#   erb :'decks/index'
+# end
 
 get '/decks/new' do 
-  @deck = Deck.new()
+  # @deck = Deck.new()
   erb :'decks/new'
 end
 
@@ -21,9 +21,9 @@ get '/deck/:id/add_cards' do
 end
 
 post '/decks' do 
-  # need to refactor for current user stuff
   @deck = Deck.new(params[:deck])
-  # @deck.user_id = current_user
+  @deck.user_id = current_user.id
+
   if @deck.save
     @messages = "Your deck has been saved"
     redirect "/deck/#{@deck.id}/add_cards"
@@ -37,8 +37,27 @@ post '/deck/:id/add_cards' do
   @deck = Deck.find(params[:id])
   card = params[:deck]["cards"]
   @deck.cards << Card.create(question: card["question"], answer: card["answer"], deck_id: @deck.id)
-  redirect "/deck/#{@deck.id}"
+  
+  if params[:button] == "another_card"
+    redirect "/deck/#{@deck.id}/add_cards"
+  else
+    redirect '/user/decks'
+  end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #   @deck.cards = @cards
 #   @deck.save
 #   erb :'decks/show'

@@ -3,18 +3,32 @@ get '/login' do
 end
 
 post '/login' do
-  p params
   user = User.find_by_email(params[:email])
   
   if user.password == params[:password]
     session[:user_id] = user.id
-    "Yay!"
-    #view to render?  profile page maybe?
+    redirect "/user/profile"
   else
     redirect '/login'
     #display authentication errors (need to build a partial for this)
   end
-end  
+end 
+
+get '/user/decks' do
+  if current_user
+    erb :'decks/user_decks'
+  else
+    redirect '/'
+  end
+end
+
+get '/user/profile' do
+  if current_user
+    erb :'user_views/profile'
+  else 
+    redirect '/'
+  end
+end
 
 get '/sign_up' do 
   erb :'user_views/sign_up'
@@ -25,12 +39,11 @@ post '/sign_up' do
   
   if user.valid?
     session[:user_id] = user.id
-    "hi"
-    #view to render?  profile page maybe?
+    redirect "user/profile"
   else
     @errors = []
     erb :'user_views/sign_up'
-
+#display authentication errors
   end
 end
 
