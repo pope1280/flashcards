@@ -5,7 +5,7 @@ class Guess < ActiveRecord::Base
   def check_answer
     @card = Card.find(self.card_id)
     @deck = Deck.find(@card.deck_id)
-    if @card.answer == self.user_answer
+    if @card.answer.downcase == self.user_answer.downcase
       self.result = "correct"
       self.save
     else
