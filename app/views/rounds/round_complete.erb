@@ -1,0 +1,23 @@
+<h1> Round Complete! </h1>
+
+<% round_deck %>
+
+<h2>Deck: <%= @deck.topic %></h2>
+
+
+<% round_complete %>
+<p>Number Correct: <%=@round_results[:correct]%></p>
+<p>Number Incorrect: <%=@round_results[:incorrect]%></p>
+
+<!-- <a href="/user/profile">Profile</a>
+<a href="/round/">Play Again!</a> -->
+
+<form action="/user/profile" method="user">
+  <input type="submit" value="Go to Profile">
+</form>
+<br>
+
+<form action="/rounds" method="post">
+  <input type="hidden" name="round[deck_id]" value="<%= @deck.id %>">
+  <input type="submit" value="Play Again!">
+</form>

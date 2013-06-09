@@ -1,18 +1,7 @@
 require 'debugger'
-# get '/decks' do 
-#   # need before filter here for logged in users
-#   @decks = Deck.all
-#   erb :'decks/index'
-# end
 
 get '/decks/new' do 
-  # @deck = Deck.new()
   erb :'decks/new'
-end
-
-get '/deck/:id' do 
-  @deck = Deck.find(params[:id])
-  erb :'decks/show'
 end
 
 get '/deck/:id/add_cards' do 
@@ -44,3 +33,17 @@ post '/deck/:id/add_cards' do
     redirect '/user/decks'
   end
 end
+
+
+# get '/decks' do 
+#   # need before filter here for logged in users
+#   @decks = Deck.all
+#   erb :'decks/index'
+# end
+
+
+
+# get '/deck/:id' do 
+#   @deck = Deck.find(params[:id])
+#   erb :'decks/show'
+# end

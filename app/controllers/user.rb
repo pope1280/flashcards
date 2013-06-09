@@ -43,7 +43,7 @@ post '/sign_up' do
   else
     @errors = []
     erb :'user_views/sign_up'
-#display authentication errors
+    #display authentication errors
   end
 end
 

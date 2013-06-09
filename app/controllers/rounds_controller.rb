@@ -13,10 +13,6 @@ post '/rounds' do
   end
 end
 
-# before '/round/:id' do 
-#   authenticated?
-# end
-
 get '/round/:id' do 
   @round = Round.find(params[:id])
   @deck = Deck.find(@round.deck_id)
