@@ -7,6 +7,8 @@ helpers do
   def user_history
     if current_user.rounds.length > 0
       :'user_views/_user_history'
+    else
+      ""
     end
   end
 
