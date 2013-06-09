@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates :password, :presence => true
 
   
-  has_many :decks
+  has_many :decks, :dependent => :destroy
   has_many :rounds
   
  include BCrypt

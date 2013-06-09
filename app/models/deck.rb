@@ -1,7 +1,8 @@
 class Deck < ActiveRecord::Base
   belongs_to :user
   belongs_to :round
-  has_many :cards
+  has_many :cards, :dependent => :destroy
+  validates :topic, :presence => true
 
 
   def get_next_card(deck, card)
