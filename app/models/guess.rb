@@ -1,6 +1,7 @@
 class Guess < ActiveRecord::Base
   belongs_to :round
   belongs_to :card
+  validates :user_answer, :presence => true
 
   def check_answer
     @card = Card.find(self.card_id)

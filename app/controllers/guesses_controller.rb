@@ -9,14 +9,12 @@ post '/guesses' do
   if @guess.save
     response = @guess.check_answer
     if response[:round_status] == "over"
-      @messages = @guess.result
       erb :'/rounds/round_complete'
     else
-      @messages = @guess.result
       erb :'/cards/_display_question', :locals => {card: response[:card], deck: @deck, round: @round }
     end
   else
     @messages = @guess.errors.messages
-    erb :'/cards/_display_question', :locals => {card: @card.id, deck: @deck.id, round: @round.id }
+    erb :'/cards/_display_question', :locals => {card: @card, deck: @deck, round: @round }
   end
 end

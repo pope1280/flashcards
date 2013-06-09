@@ -18,13 +18,10 @@
 
   <title></title>
 </head>
-
-<% if @messsages %> 
-<%= @messages %>
-<% end %>
 <body>
   <%= erb :_nav_bar %>
   <div class="container">
+    <%= erb :_error_messages %>
     <%= yield %>
   </div>
 </body>
