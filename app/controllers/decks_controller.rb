@@ -24,6 +24,7 @@ end
 
 post '/deck/:id/add_cards' do 
   @deck = Deck.find(params[:id])
+  debugger
   card = params[:deck]["cards"]
   @deck.cards << Card.create(question: card["question"], answer: card["answer"], deck_id: @deck.id)
   

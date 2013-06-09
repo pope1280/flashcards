@@ -1,7 +1,14 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
-
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
-});
+  $('.add_card').on('click', function(e){
+    e.preventDefault();
+    console.log($('.add_cards_to_deck').attr('action'));
+    console.log($('#card_adder').serialize());
+    $.ajax({
+      method: 'post',
+      url: $('.add_cards_to_deck').attr('action'),
+      data: $('#card_adder').serialize()
+    }).done(function(response){
+      console.log(response);
+    });
+  });
+}); //document ready
