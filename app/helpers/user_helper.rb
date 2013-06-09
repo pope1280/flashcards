@@ -6,7 +6,7 @@ helpers do
 
   def user_history
     if current_user.rounds.length > 0
-      :_user_history
+      :'user_views/_user_history'
     end
   end
 

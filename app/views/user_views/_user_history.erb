@@ -8,5 +8,15 @@
   <th>Incorrect</th>
   <th>Unanswered</th>
 </tr>
-<%=current_user.
+<% current_user.rounds.each do |round| %>
+<tr>
+  <td><%=round.id%></td>
+  <td><%=Deck.find(round.deck_id).topic%></td>
+  <% round_results(round.id) %>
+  <td><%=@round_results[:correct]%></td>
+  <td><%=@round_results[:incorrect]%></td>
+  <td><%=@round_results[:unanswered]%></td>
+</tr>
+<%end%>
+
 </table>
