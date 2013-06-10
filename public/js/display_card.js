@@ -17,8 +17,8 @@ $(document).ready(function() {
     }).done(function(data) {
       var guess = data.guess;
       var nextCard = data.card.card;
-
-      console.log(data);
+      var deckTopic = $("#card_question");
+      var guessBox = $("#guess_box");
 
       if (guess === "correct")
         {
@@ -45,7 +45,6 @@ $(document).ready(function() {
         card.toggleClass("flipped");
       }, 3000);
 
-      
 
       if (data.status) {
         setTimeout(function() {
@@ -55,7 +54,8 @@ $(document).ready(function() {
       else {
         setTimeout(function() {
           flip.attr("disabled", false);
-          $("h1").text(nextCard.question);
+          guessBox.val("");
+          deckTopic.text(nextCard.question);
           card.find(".back").text(""+nextCard.answer+"");
           form.find("#card_id").attr('value', nextCard.id);
         }, 4000);
