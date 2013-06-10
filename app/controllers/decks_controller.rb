@@ -6,7 +6,8 @@ end
 
 get '/deck/:id/add_cards' do 
   @deck = Deck.find(params[:id])
-  erb :'decks/add_cards', :locals => {deck: @deck}
+  erb :'decks/add_cards'
+  # :locals => {deck: @deck}
 end
 
 post '/decks' do 
@@ -22,43 +23,29 @@ post '/decks' do
   end
 end
 
-# post '/deck/:id/add_cards' do 
-#   @deck = Deck.find(params[:id])
-#   card = params[:deck]["cards"]
-#   @deck.cards << Card.create(question: card["question"], answer: card["answer"], deck_id: @deck.id)
-#   if params[:button] == "another_card"
-#     redirect "/deck/#{@deck.id}/add_cards"
-#   else
-#     redirect '/user/decks'
-#   end
-# end
-
-
-post '/deck/:id/add_cards' do 
+post '/deck/:id/add_cards' do
+  content_type :json
   @deck = Deck.find(params[:id])
   card = Card.new(params[:deck]["cards"])
   if card.save
     @deck.cards << card
     if params[:button] == "another_card"
-      erb :'decks/add_cards', :locals => { deck: @deck }
+      response = {}
+      response[:success] = true
+      response[:card] = card
+      response.to_json
     else
       redirect '/user/decks'
     end
   else
-    @messages = card.errors.messages
-    erb :'decks/add_cards', :locals => { deck: @deck }
+    response = {}
+    response[:success] = false
+    response.to_json
   end
 end
 
-# get '/decks' do 
-#   # need before filter here for logged in users
-#   @decks = Deck.all
-#   erb :'decks/index'
-# end
-
-
-
-# get '/deck/:id' do 
+# post '/deck/:id/add_cards' do 
+#   content_type :json
 #   @deck = Deck.find(params[:id])
-#   erb :'decks/show'
+#   cards = Card.new(params[:deck]["cards"])
 # end

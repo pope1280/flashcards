@@ -19,3 +19,6 @@ th {
   list-style: none;
 }
 
+.saved-card {
+  background-color: yellow;
+}

@@ -15,13 +15,16 @@
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
   <title></title>
 </head>
 <body>
   <%= erb :_nav_bar %>
   <div class="container">
-    <%= erb :_error_messages %>
+    <div class="errors">
+      <%= erb :_error_messages %>
+    </div>
     <%= yield %>
   </div>
 </body>
