@@ -24,6 +24,7 @@ end
 
 get '/user/profile' do
   if current_user
+    @gravatar_hash = Digest::MD5.hexdigest(current_user.email)
     erb :'user_views/profile'
   else 
     redirect '/'

@@ -1,9 +1,9 @@
-.container {
+/*.container {
   margin: 100px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
-}
+}*/
 
 th {
   text-align: left;
@@ -25,4 +25,51 @@ th {
 
 .current_cards-list {
   list-style: none;
+}
+
+.container {
+  margin-top: 5%;
+  width: 100%;
+  height: 100%;
+}
+
+.profile {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.user-img {
+  padding: 10px;
+  border-radius: 10px;
+  width: 200px;
+  overflow: auto;
+}
+
+.user-welcome {
+  margin-top: -230px;
+  margin-left: 250px;
+}
+
+.user-info {
+  margin-left: 22%;
+}
+
+.profile-tabs {
+  margin-left: 18%;
+}
+
+.profile-tabs li {-moz-border-radius: 12px 12px 0 0; /* FF1+ */
+-webkit-border-radius: 12px 12px 0 0; /* Saf3-4 */
+  border-radius: 12px 12px 0 0; /* Opera 10.5, IE9, Saf5, Chrome */
+  border:1px solid black;
+  display:inline;
+  list-style-type:none;
+  padding:5px;
+}
+li:hover {background:black;}
+li a {text-decoration:none; color:black;}
+li a:hover {color:white;}
+
+li.selected {
+  border-bottom: none;
 }

@@ -9,6 +9,9 @@ $(document).ready(function() {
       parseResponse(response);
     });
   });
+  $('.profile-tabs').on('click', function(){
+    navigateTabs(this);
+  });
 }); //document ready
 
 function parseResponse(response) {
@@ -38,5 +41,17 @@ function addNewCardToList(list, item) {
 function resetForm(klass) {
 $('.'+klass).each(function(){
   this.reset();
+  });
+}
+
+function navigateTabs(list) {
+  var elements = [];
+  $('.profile-tabs').each(function() {
+    elements.push($(this).html());
+    for(var i = 0; i < elements.length; i ++)
+      {
+        console.log(elements[i]);
+
+      }
   });
 }

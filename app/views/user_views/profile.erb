@@ -1,10 +1,23 @@
-<h1>Welcome <%=current_user.name%>!</h1>
+<div class="profile">
+  <div class="user-img">
+    <img src="http://www.gravatar.com/avatar/<%= @gravatar %>?s=200">
+  </div>
 
-<a href="/decks/new">Create Deck</a>
-<a href="/user/decks">Play Deck</a>
+  <div class="user-welcome">
+    <h1>Welcome <%= current_user.name%>!</h1>
+  </div>
 
-
-<%= erb user_history %>
-<!-- <div class="container">
+  <ul class="profile-tabs">
+    <li class="selected"><a href="#decks">Your Decks</a></li>
+    <li><a href="#stats">Your Stats</a></li>
+  </ul>
+  <div class="user-info">
+    <div class="decks" style="display: block;">
+      <a href="/decks/new">Create Deck</a>
+      <a href="/user/decks">Play Deck</a>
+    </div>
+    <div class="stats">
+      <%= erb :'user_views/_user_history' %>
+    </div>
+  </div>
 </div>
- -->
