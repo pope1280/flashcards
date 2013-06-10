@@ -1,10 +1,15 @@
 <h1>Now add Cards</h1>
 <form class="add_cards_to_deck" id="card_adder" action="/deck/<%= @deck.id %>/add_cards" method="post">
-  <label for="topic">New Card</label>
-  <input type="text" name="deck[cards][question]" placeholder="Enter a card question"><br/>
-  <input type="text" name="deck[cards][answer]" placeholder="Now enter an answer"><br><br>
+  <label for="new-card-question">Question</label>
+  <input type="text" name="deck[cards][question]" placeholder="Enter a card question"><br/><br/>
+  <label for="new-card-answer">Answer</label>
+  <input type="text" name="deck[cards][answer]" placeholder="Now enter an answer"><br/><br/>
   <button type="submit" class="add_card" name="button" value="another_card">Add Another Card</button>
-  <button type="submit" name="button" value="submit">I'm Done!</button>
+</form><br/>
+<form action="/user/decks">
+    <input type="submit" value="I'm Done!">
 </form>
 
-<%= erb :'decks/_current_cards', :locals => { deck: @deck } %>
+<div class="current-cards">
+  <%= erb :'decks/_current_cards', :locals => { deck: @deck } %>
+</div>

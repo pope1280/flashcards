@@ -22,3 +22,7 @@ th {
 .saved-card {
   background-color: yellow;
 }
+
+.current_cards-list {
+  list-style: none;
+}

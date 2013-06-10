@@ -1,0 +1,8 @@
+<h3>Current Cards</h3>
+<ul class="current_cards-list">
+  <% if deck.cards.any? %>
+  <% deck.cards.each do |card| %>
+  <li><%= card.question %></li>
+  <% end %>
+</ul>
+<% end %>

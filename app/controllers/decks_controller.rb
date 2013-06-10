@@ -29,23 +29,10 @@ post '/deck/:id/add_cards' do
   card = Card.new(params[:deck]["cards"])
   if card.save
     @deck.cards << card
-    if params[:button] == "another_card"
-      response = {}
-      response[:success] = true
-      response[:card] = card
-      response.to_json
-    else
-      redirect '/user/decks'
-    end
+    response = {:success => true, :card => card}
+    response.to_json
   else
-    response = {}
-    response[:success] = false
+    response = {:success => false }
     response.to_json
   end
 end
-
-# post '/deck/:id/add_cards' do 
-#   content_type :json
-#   @deck = Deck.find(params[:id])
-#   cards = Card.new(params[:deck]["cards"])
-# end
