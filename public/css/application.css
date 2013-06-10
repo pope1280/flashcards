@@ -51,29 +51,46 @@ body {
 }
 
 .user-welcome {
+  float: left;
+  text-align: left;
   margin-top: -230px;
   margin-left: 250px;
+}
+
+.user-information {
+  margin-top: -125px;
 }
 
 .user-info {
   margin-left: 22%;
 }
 
+.user-decks {
+  list-style: none;
+  padding: 0px;
+}
+
+.user-decks li {
+  font-size: 26px;
+  hover: none;
+}
+
 .profile-tabs {
   margin-left: 18%;
 }
 
-.profile-tabs li {-moz-border-radius: 12px 12px 0 0; /* FF1+ */
+.profile-tabs li {
+
 -webkit-border-radius: 12px 12px 0 0; /* Saf3-4 */
   border-radius: 12px 12px 0 0; /* Opera 10.5, IE9, Saf5, Chrome */
-  border:1px solid black;
+  border:1px solid white;
   display:inline;
   list-style-type:none;
   padding:5px;
 }
-li:hover {background:black;}
-li a {text-decoration:none; color:black;}
-li a:hover {color:white;}
+li:hover {background:white;}
+li a {text-decoration:none; color:white;}
+li a:hover {color:black;}
 
 li.selected {
   border-bottom: none;

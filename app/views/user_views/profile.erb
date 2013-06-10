@@ -6,18 +6,18 @@
   <div class="user-welcome">
     <h1>Welcome <%= current_user.name%>!</h1>
   </div>
-
-  <ul class="profile-tabs">
-    <li class="selected"><a href="#decks">Your Decks</a></li>
-    <li><a href="#stats">Your Stats</a></li>
-  </ul>
-  <div class="user-info">
-    <div class="decks" style="display: block;">
-      <a href="/decks/new">Create Deck</a>
-      <a href="/user/decks">Play Deck</a>
-    </div>
-    <div class="stats">
-      <%= erb :'user_views/_user_history' %>
+  <div class="user-information">
+    <ul class="profile-tabs">
+      <li id="decks"class="selected"><a href="#decks">Your Decks</a></li>
+      <li id="stats" class="unselected"><a href="#stats">Your Stats</a></li>
+    </ul>
+    <div class="user-info">
+      <div class="decks">
+        <%= erb :'decks/user_decks' %>
+        <a href="/decks/new">Create Deck</a>
+      </div>
+      <div class="stats" style="display: none;">
+        <%= erb :'user_views/_user_history' %>
+      </div>
     </div>
   </div>
-</div>

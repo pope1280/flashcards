@@ -1,8 +1,8 @@
-
 <div class='list_of_decks'>
-  <h1><%=current_user.name%>'s Decks</h1>
-  <br>
+  <!-- <h1><%=current_user.name%>'s Decks</h1>
+  <br> -->
 
+<ul class='user-decks'>
   <% current_user.decks.each do |deck| %>
     
     <form action="/rounds" method="post">
