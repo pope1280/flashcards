@@ -13,8 +13,8 @@
     </ul>
     <div class="user-info">
       <div class="decks">
+        <a class="create_deck" href="/decks/new"><button>Create Deck</button></a>
         <%= erb :'decks/user_decks' %>
-        <a href="/decks/new">Create Deck</a>
       </div>
       <div class="stats" style="display: none;">
         <%= erb :'user_views/_user_history' %>

@@ -23,12 +23,12 @@ function parseResponse(response) {
   if(response['success'] === true )
   {
       //refactor this at some point
-      $('.container').prepend('<div class="saved-card">Card Successfully Saved</div>');
+      $('.add-cards-container').prepend('<div class="saved-card">Card Successfully Saved</div>');
       $('.errors').empty();
       resetForm('add_cards_to_deck');
       addNewCardToList('current_cards-list', response['card']['card']['question']);
       $('.current_cards-list').effect('highlight');
-      $('.saved-card').fadeOut(2000);
+      $('.saved-card').fadeOut(5000);
     }
     else
     {
