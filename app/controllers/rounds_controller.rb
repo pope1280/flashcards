@@ -13,9 +13,15 @@ post '/rounds' do
   end
 end
 
+get '/round/complete' do
+  erb :'/rounds/round_complete'
+end
+
 get '/round/:id' do 
   @round = Round.find(params[:id])
   @deck = Deck.find(@round.deck_id)
   @cards = @deck.cards
   erb :'rounds/show'
 end
+
+

@@ -1,4 +1,4 @@
-<h1>Round <%= @round.id %></h1><br/>
-<h3><%= @deck.topic %></h3>
+<!-- <h1>Round <%= @round.id %></h1><br/>
+<h3><%= @deck.topic %></h3> -->
 
-<%= erb :'cards/_display_question', :locals => { card: @cards.first, round: @round, deck: @deck } %>
+<%= erb :'cards/_display_card', :locals => { card: @cards.first, round: @round, deck: @deck } %>

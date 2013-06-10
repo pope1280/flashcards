@@ -1,0 +1,28 @@
+  
+
+<div class="question_container">
+  <h1><%= card.question %></h1>
+
+  <!-- .card_container houses the 3D space -->
+  <section class="card_container">
+    <!-- #card acts as a wrapper for the 3D object -->
+    <div id="card">
+      <figure class="front">?</figure>
+      <figure class="back"><%= card.answer %></figure>
+    </div>
+  </section>
+
+  <h2></h2>  
+  
+  <section id="guess">
+    <form id="guess_form" action='/guesses' method='post'>
+      <input type="text"   id="guess_box" name="guess[user_answer]" placeholder="Guess Here">
+      <input type="hidden" id="card_id"   name="guess[card_id]" value="<%= card.id %>">
+      <input type="hidden" id="round_id"  name="guess[round_id]" value="<%= round.id %>">
+      <br>
+      <br>
+      <input type='submit' id="flip_button" value="Flip It!">
+    </form>
+  </section>
+
+</div>
