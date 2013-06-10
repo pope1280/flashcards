@@ -43,13 +43,13 @@ $(document).ready(function() {
       setTimeout(function() {
         message.slideUp("slow");
         card.toggleClass("flipped");
-      }, 3000);
+      }, 2000);
 
 
       if (data.status) {
         setTimeout(function() {
           window.location.href = data.redirect;
-        }, 4000);
+        }, 3000);
       }
       else {
         setTimeout(function() {
@@ -58,7 +58,7 @@ $(document).ready(function() {
           deckTopic.text(nextCard.question);
           card.find(".back").text(""+nextCard.answer+"");
           form.find("#card_id").attr('value', nextCard.id);
-        }, 4000);
+        }, 3000);
       }
     });
   });

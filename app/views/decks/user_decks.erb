@@ -1,12 +1,17 @@
-<h1><%=current_user.name%>'s Decks</h1>
 
-<ul>
+<div class='list_of_decks'>
+  <h1><%=current_user.name%>'s Decks</h1>
+  <br>
+
   <% current_user.decks.each do |deck| %>
-    <li><a href=''><%=deck.topic%></a></li>
+    
     <form action="/rounds" method="post">
-    <input type="hidden" name="round[deck_id]" value="<%= deck.id %>">
-    <input type="submit" value="Play">
+      <p><%=deck.topic%></p>
+      <input type="hidden" name="round[deck_id]" value="<%= deck.id %>">
+      <input type="submit" id="deck_play" value="Play Deck">
     </form>
+    <br>
   <% end %>
-</ul> 
+ 
+ </div>
 

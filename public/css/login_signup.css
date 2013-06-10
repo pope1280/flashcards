@@ -1,0 +1,77 @@
+#login_page h2 {
+
+  margin-top: 100px;
+  color: white;
+  text-shadow: black 0.1em 0.1em 0.3em;
+  text-align: center;
+  font-family:arial, helvetica, sans-serif; 
+  font-variant: small-caps;
+  font-size: 3em;
+  font-weight: bolder;  
+}
+
+#signup_page h2 {
+  margin-top: 100px;
+  color: white;
+  text-shadow: black 0.1em 0.1em 0.3em;
+  text-align: center;
+  font-family:arial, helvetica, sans-serif; 
+  font-variant: small-caps;
+  font-size: 3em;
+  font-weight: bolder;  
+}
+
+.login_container {
+  margin: 20px auto;
+  width: 400px;
+  padding: 40px 20px 20px 20px;
+  border: 2px solid #34740e;
+  border-radius: 40px;
+  background-color: #FDF5E6;
+}
+
+.login_container form {
+  text-align: center;
+}
+
+#ls_box {
+  height: 40px;
+  width: 350px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+#login_button {
+ border:1px solid #34740e; 
+ border-radius: 3px;
+ font-size:20px;
+ font-family:arial, helvetica, sans-serif; 
+ padding: 10px 10px 10px 10px; 
+ text-decoration:none; 
+ display:inline-block;
+ text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+ font-weight:bold; 
+ color: #FFFFFF;
+ background-color: #4ba614; 
+ background-image: -webkit-gradient(linear, left top, left bottom, from(#4ba614), to(#008c00));
+ background-image: -webkit-linear-gradient(top, #4ba614, #008c00);
+ background-image: -moz-linear-gradient(top, #4ba614, #008c00);
+ background-image: -ms-linear-gradient(top, #4ba614, #008c00);
+ background-image: -o-linear-gradient(top, #4ba614, #008c00);
+ background-image: linear-gradient(to bottom, #4ba614, #008c00);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#4ba614, endColorstr=#008c00);
+}
+
+.signup_container {
+  margin: 20px auto;
+  width: 400px;
+  padding: 40px 20px 20px 20px;
+  border: 2px solid #34740e;
+  border-radius: 40px;
+  background-color: #FDF5E6;
+}
+
+.signup_container form {
+  text-align: center;
+}

@@ -1,8 +1,16 @@
-<h3>Sign up!<h3>
+<div id='signup_page'>
 
-<form id="signup" action="/sign_up" method="post">
-  <input type="text" name="user[name]" placeholder="Name" required>
-  <input type="text" name="user[email]" placeholder="Email" required>
-  <input type="password" name="user[password]" placeholder="Password" required>
-  <input type="submit" value="Sign Up!">
-</form>
+  <h2>Sign up:</h2>
+
+  <section class="signup_container">
+
+    <form id="signup" action="/sign_up" method="post">
+      <input type="text" id="ls_box" name="user[name]" placeholder="Name" required><br><br>
+      <input type="text" id="ls_box" name="user[email]" placeholder="Email" required><br><br>
+      <input type="password" id="ls_box" name="user[password]" placeholder="Password" required><br><br>
+      <input type="submit" id='login_button' value="Sign Up!">
+    </form>
+
+  </section>
+
+</div>

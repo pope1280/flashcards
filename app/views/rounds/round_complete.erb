@@ -1,21 +1,23 @@
+<div class='round_complete'>
+
 <h1> Round Complete! </h1>
 
 <% round_deck %>
-
 <h2>Deck: <%= @deck.topic %></h2>
 
-
 <% round_complete %>
-<p>Number Correct: <%=@round_results[:correct]%></p>
-<p>Number Incorrect: <%=@round_results[:incorrect]%></p>
-
+<p>Number Correct: <%= right = @round_results[:correct]%></p>
+<p>Number Incorrect: <%= wrong = @round_results[:incorrect]%></p>
+<p>Accuracy: <%= ((right / (right + wrong).to_f) * 100).round(1).to_s + "%" %></p>
 
 <form action="/user/profile" method="user">
-  <input type="submit" value="Go to Profile">
+  <input type="submit" id="complete_profile" value="Go to Profile">
 </form>
 <br>
 
 <form action="/rounds" method="post">
   <input type="hidden" name="round[deck_id]" value="<%= @deck.id %>">
-  <input type="submit" value="Play Again!">
+  <input type="submit" id="play_again" value="Play Again!">
 </form>
+
+</div>
